@@ -17,8 +17,8 @@ RUN echo "export TERM=xterm-256color" >> /root/.bashrc
 RUN echo "service ssh start" >> /entrypoint.sh
 
 WORKDIR /tmp
-#RUN wget  https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
-COPY Anaconda3-2020.11-Linux-x86_64.sh /tmp
+RUN wget  https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+#COPY Anaconda3-2020.11-Linux-x86_64.sh /tmp
 RUN sh Anaconda3-2020.11-Linux-x86_64.sh -b 
 RUN rm Anaconda3-2020.11-Linux-x86_64.sh
 ENV PATH /root/anaconda3/bin:$PATH
