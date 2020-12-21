@@ -20,7 +20,12 @@ services:
 
 ```
 
-To launch the container simply run:
+To launch the container with docker-compose:
 ```
 docker-compose up -d
+```
+
+If you prefer to go with docker-cli:
+```
+docker run -it --name jcadic_vanilla -d -p 2222:22 --gpus all  -v /mnt:/mnt -v /srv:/srv jcadic:vanilla
 ```
