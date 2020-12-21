@@ -28,8 +28,10 @@ RUN conda update conda
 RUN conda update anaconda
 RUN conda update --all
 RUN conda create -n py37 python=3.7
-
-RUN echo "export PATH=/root/anaconda3/bin:$PATH" >> /root/.bashrc
 RUN echo "source activate py37" >> /root/.bashrc
+
+RUN /root/anaconda3/envs/py37/bin/pip install gnutools-python
+
+
 
 WORKDIR /root
