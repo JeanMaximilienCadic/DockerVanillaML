@@ -1,0 +1,14 @@
+version: '2.3'
+
+services:
+ vanilla:
+  runtime: nvidia
+  image: jcadic/vanilla
+  container_name: jcadic-vanilla
+  ports:
+    - "2222:22"
+  volumes:
+    - "/mnt:/mnt"
+    - "/srv:/srv"
+  command: tail -F anything
+
